@@ -1,0 +1,6 @@
+#canvas_map {
+    width: 10px;
+    height: 10px;
+    border: solid 1px black;
+    background-color: #fff;
+}

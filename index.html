@@ -8,8 +8,14 @@
 
     <script src="js/main.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/setup.js"></script>
     <script src="js/entity.js"></script>
     <script src="js/map.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/map.css">
 
 </head>
 
@@ -20,18 +26,35 @@
                 <ul>
                     <li><span class="nav-title">GodMode</span></li>
                     <li><a href="">Reload</a></li>
+                    <li><a href="#credits">Credits</a></li>
                 </ul>
             </nav>
         </header>
-        <h1>GodMode</h1>
+        <div class="content">
+            <h1>GodMode</h1>
 
-        <div class="wrapper" id="wrapper">
-            <canvas id="canvas_map"></canvas>
-            <canvas id="canvas_individuals"></canvas>
-            <canvas id="canvas_paths"></canvas>
-            <canvas id="canvas_events"></canvas>
+            <hr>
+            <div class="configs">
+                <h2>Configs</h2>
+                <label for="width">Breite</label>
+                <input type="number" name="width" id="width">
+                <br>
+                <label for="height">Höhe</label>
+                <input type="number" name="height" id="height">
+
+                <br>
+                <button type="button" id="setupBtn">Setup</button>
+            </div>
+
+            <hr>
+            <div class="wrapper" id="wrapper">
+                <h2>Simulation</h2>
+                <canvas id="canvas_map"></canvas>
+                <canvas id="canvas_individuals"></canvas>
+                <canvas id="canvas_paths"></canvas>
+                <canvas id="canvas_events"></canvas>
+            </div>
         </div>
-
     </div>
 </body>
 
