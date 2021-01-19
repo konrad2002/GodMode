@@ -6,4 +6,22 @@ $(document).ready(function() {
 
     });
 
+    $("#newPopulationBtn").click(function() {
+
+        main.newPopulation();
+
+    });
+
+    $("#newGenerationBtn").click(function() {
+
+        main.population.generateGeneration();
+
+    });
+
+    $("#doStepBtn").click(function() {
+
+        main.tick();
+
+    });
+
 });

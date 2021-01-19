@@ -10,12 +10,15 @@
     <script src="js/config.js"></script>
     <script src="js/setup.js"></script>
     <script src="js/entity.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/population.js"></script>
     <script src="js/map.js"></script>
     <script src="js/main.js"></script>
     <script src="js/listener.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/config.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/map.css">
 
@@ -36,16 +39,25 @@
             <h1>GodMode</h1>
 
             <hr>
+            <h2>Configs</h2><br>
             <div class="configs">
-                <h2>Configs</h2>
-                <label for="width">Breite</label>
-                <input type="number" name="width" id="width">
-                <br>
-                <label for="height">Höhe</label>
-                <input type="number" name="height" id="height">
+                <div class="config-box">
+                    <h3>Setup</h3>
+                    <label for="width">Breite</label>
+                    <input type="number" name="width" id="width">
+                    <br>
+                    <label for="height">Höhe</label>
+                    <input type="number" name="height" id="height">
+                    <br>
+                    <button type="button" id="setupBtn">Setup</button>
+                </div>
+                <div class="config-box">
+                    <h3>Controls</h3>
+                    <button type="button" id="newPopulationBtn">Neue Population</button>
+                    <button type="button" id="newGenerationBtn">Neue Generation</button>
+                    <button type="button" id="doStepBtn">Schritt</button>
+                </div>
 
-                <br>
-                <button type="button" id="setupBtn">Setup</button>
             </div>
 
             <hr>

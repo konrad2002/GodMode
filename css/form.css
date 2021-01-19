@@ -10,6 +10,7 @@ input {
     border: none;
     box-shadow: 1px 1px 3px gray;
     border-radius: 32px;
+    display: block;
 }
 
 button {
