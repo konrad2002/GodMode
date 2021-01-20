@@ -5,6 +5,7 @@
 .config-box {
     display: block;
     width: 300px;
-    margin: 20px;
+    margin: 15px;
+    padding: 15px;
     border-right: 1px solid #d1d1d1;
 }
