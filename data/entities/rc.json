@@ -1,0 +1,18 @@
+{
+    "id": 2,
+    "name": "rc",
+    "fullName": "Ranidae chlorophagi",
+    "shortName": "RC",
+    "rank": "primary consumer",
+    "properties": {
+        "mass": 10,
+        "neededMass": 10,
+        "dryMass": 10,
+        "neededSpace": 1,
+        "visits": 1,
+        "reproduction": {
+            "type": "animal",
+            "childs": 2
+        }
+    }
+}

@@ -24,4 +24,22 @@ $(document).ready(function() {
 
     });
 
+    $("#selectCC").click(function() {
+        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/cc.json', function(data) {
+            $("#propertiesText").val(data);
+        });
+    });
+
+    $("#selectRC").click(function() {
+        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/rc.json', function(data) {
+            $("#propertiesText").val(data);
+        });
+    });
+
+    $("#selectMS").click(function() {
+        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/ms.json', function(data) {
+            $("#propertiesText").val(data);
+        });
+    });
+
 });

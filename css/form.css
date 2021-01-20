@@ -1,5 +1,6 @@
 button,
-input {
+input,
+textarea {
     display: inline-block;
     padding: 12px 16px;
     margin: 10px;
@@ -15,6 +16,12 @@ input {
 
 input[type=checkbox] {
     display: inline-block;
+}
+
+textarea {
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    transition: 0.1s;
 }
 
 button {
