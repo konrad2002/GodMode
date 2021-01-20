@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     $("#newGenerationBtn").click(function() {
 
-        main.population.generateGeneration();
+        main.newGenerations();
 
     });
 
@@ -25,21 +25,15 @@ $(document).ready(function() {
     });
 
     $("#selectCC").click(function() {
-        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/cc.json', function(data) {
-            $("#propertiesText").val(data);
-        });
+        getJson("cc", true);
     });
 
     $("#selectRC").click(function() {
-        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/rc.json', function(data) {
-            $("#propertiesText").val(data);
-        });
+        getJson("rc", true);
     });
 
     $("#selectMS").click(function() {
-        $.getJSON('https://logilutions.de/api/godmode/data/enities/' + $("#propertyId").val() + '/ms.json', function(data) {
-            $("#propertiesText").val(data);
-        });
+        getJson("ms", true);
     });
 
 });

@@ -2,6 +2,7 @@ class Main {
     constructor() {
         this.map = new Map();
         this.game = new Game();
+        this.data = undefined;
     }
 
     newSetup() {
@@ -10,7 +11,40 @@ class Main {
     }
 
     newPopulation() {
-        this.population = new Population(1, 100);
+        this.populations = [];
+
+        if ($("#selectCC").val()) {
+            this.populations.push(
+                new Population(
+                    "cc",
+                    $("#populationSizeCC").val()
+                )
+            );
+        }
+
+        if ($("#selectRC").val()) {
+            this.populations.push(
+                new Population(
+                    "rc",
+                    $("#populationSizeRC").val()
+                )
+            );
+        }
+
+        if ($("#selectMS").val()) {
+            this.populations.push(
+                new Population(
+                    "ms",
+                    $("#populationSizeMS").val()
+                )
+            );
+        }
+    }
+
+    newGenerations() {
+        this.populations.forEach(population => {
+            population.generateGeneration();
+        });
     }
 
     tick() {

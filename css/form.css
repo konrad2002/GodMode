@@ -1,6 +1,7 @@
 button,
 input,
-textarea {
+textarea,
+select {
     display: inline-block;
     padding: 12px 16px;
     margin: 10px;
