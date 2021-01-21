@@ -1,0 +1,24 @@
+.stats .stats-child {
+    display: inline;
+}
+
+.stats .stat-description {
+    font-weight: bold;
+}
+
+.stats .stat-description::after {
+    content: ":";
+}
+
+.stats .stat-value {
+    display: inline-block;
+    padding: 12px 16px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    background-color: #fff;
+    border: none;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 32px;
+}

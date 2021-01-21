@@ -2,11 +2,16 @@ class Main {
     constructor() {
         this.map = new Map();
         this.game = new Game();
-        this.data = undefined;
+
+        this.loopRunning = false;
+        this.timer = null;
+
+        this.steps = 0;
+
     }
 
-    newSetup() {
-        this.setup = new Setup();
+    newSetup(propertyId) {
+        this.setup = new Setup(propertyId);
         this.map.updateSize(this.setup);
     }
 
@@ -48,8 +53,24 @@ class Main {
     }
 
     tick() {
-        this.game.step();
-        this.map.update(this.populations);
+        main.game.step(main);
+        main.map.update(main.populations, main.setup);
+
+        main.steps++;
+        $("#statsSteps").html(main.steps);
+        $("#statsNCC").html(main.populations[0].entities.length);
+        $("#statsNRC").html(main.populations[1].entities.length);
+        $("#statsNMS").html(main.populations[2].entities.length);
+    }
+
+    toggleLoop() {
+        if (this.loopRunning) {
+            setTimeout(this.timer, 100);
+            this.loopRunning = false;
+        } else {
+            this.timer = setInterval(this.tick, this.setup.speed);
+            this.loopRunning = true;
+        }
     }
 }
 

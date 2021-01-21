@@ -34,10 +34,11 @@ class Map {
         }
     }
 
-    update(populations) {
+    update(populations, setup) {
+        this.updateSize(setup);
         populations.forEach(population => {
             population.entities.forEach(entity => {
-                this.ctx.font = "20px Comic Sans MS";
+                this.ctx.font = this.fieldsize + "px Comic Sans MS";
                 this.ctx.fillStyle = "red";
                 this.ctx.textAlign = "center";
                 this.ctx.fillText(entity.data.symbol, entity.pos.x * this.fieldsize + 10, entity.pos.y * this.fieldsize + 18);

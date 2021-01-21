@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/config.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/stats.css">
 
 </head>
 
@@ -51,10 +52,13 @@
                 <div class="config-box">
                     <h3>Setup</h3>
                     <label for="width">Width</label>
-                    <input type="number" name="width" id="width">
+                    <input type="number" id="width">
                     <br>
                     <label for="height">Height</label>
-                    <input type="number" name="height" id="height">
+                    <input type="number" id="height">
+                    <br>
+                    <label for="speed">Speed</label>
+                    <input type="number" id="speed" value="100">
                     <button type="button" id="setupBtn">Setup</button>
                 </div>
 
@@ -63,6 +67,7 @@
                     <button type="button" id="newPopulationBtn">New Population</button>
                     <button type="button" id="newGenerationBtn">New Generation</button>
                     <button type="button" id="doStepBtn">Step</button>
+                    <button type="button" id="startLoopBtn">Start Loop</button>
                 </div>
 
                 <div class="config-box">
@@ -91,6 +96,24 @@
             <hr>
             <div class="wrapper" id="wrapper">
                 <h2>Simulation</h2>
+                <div class="stats">
+                    <div class="stats-child">
+                        <span class="stat-description">Steps</span>
+                        <span class="stat-value" id="statsSteps">0</span>
+                    </div>
+                    <div class="stats-child">
+                        <span class="stat-description">CC</span>
+                        <span class="stat-value" id="statsNCC">0</span>
+                    </div>
+                    <div class="stats-child">
+                        <span class="stat-description">RC</span>
+                        <span class="stat-value" id="statsNRC">0</span>
+                    </div>
+                    <div class="stats-child">
+                        <span class="stat-description">MS</span>
+                        <span class="stat-value" id="statsNMS">0</span>
+                    </div>
+                </div>
                 <canvas id="canvas_map"></canvas>
                 <canvas id="canvas_individuals"></canvas>
                 <canvas id="canvas_paths"></canvas>

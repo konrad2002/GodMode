@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("#setupBtn").click(function() {
 
-        main.newSetup();
+        main.newSetup($("#propertyId").val());
 
     });
 
@@ -24,16 +24,29 @@ $(document).ready(function() {
 
     });
 
+    $("#startLoopBtn").click(function() {
+
+        main.toggleLoop();
+
+    });
+
+
+
     $("#selectCC").click(function() {
-        getJson("cc", true);
+        getJson("cc", main.setup.propertyId, true);
     });
 
     $("#selectRC").click(function() {
-        getJson("rc", true);
+        getJson("rc", main.setup.propertyId, true);
     });
 
     $("#selectMS").click(function() {
-        getJson("ms", true);
+        getJson("ms", main.setup.propertyId, true);
+    });
+
+
+    $("#propertyId").change(function() {
+        main.setup.propertyId = $("#propertyId").val();
     });
 
 });
