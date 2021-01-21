@@ -4,10 +4,10 @@ class Population {
         this.size = size;
     }
 
-    generateGeneration() {
+    generateGeneration(setup) {
         this.entities = [];
         for (let i = 0; i < this.size; i++) {
-            this.entities.push(new Entity(this.type));
+            this.entities.push(new Entity(this.type, setup));
         }
     }
 }

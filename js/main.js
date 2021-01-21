@@ -13,7 +13,7 @@ class Main {
     newPopulation() {
         this.populations = [];
 
-        if ($("#selectCC").val()) {
+        if ($("#selectCC").is(":checked")) {
             this.populations.push(
                 new Population(
                     "cc",
@@ -22,7 +22,7 @@ class Main {
             );
         }
 
-        if ($("#selectRC").val()) {
+        if ($("#selectRC").is(":checked")) {
             this.populations.push(
                 new Population(
                     "rc",
@@ -31,7 +31,7 @@ class Main {
             );
         }
 
-        if ($("#selectMS").val()) {
+        if ($("#selectMS").is(":checked")) {
             this.populations.push(
                 new Population(
                     "ms",
@@ -43,13 +43,13 @@ class Main {
 
     newGenerations() {
         this.populations.forEach(population => {
-            population.generateGeneration();
+            population.generateGeneration(this.setup);
         });
     }
 
     tick() {
         this.game.step();
-        // this.map.update();
+        this.map.update(this.populations);
     }
 }
 

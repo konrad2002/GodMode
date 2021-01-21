@@ -1,6 +1,11 @@
 class Entity {
-    constructor(eType) {
+    constructor(eType, setup) {
         this.type = eType;
-        this.pos = (0, 0);
+        this.pos = {
+            x: getRandomInt(0, setup.width - 1),
+            y: getRandomInt(0, setup.height - 1)
+        }
+
+        this.data = getJson(eType);
     }
 }
