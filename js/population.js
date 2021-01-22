@@ -10,4 +10,8 @@ class Population {
             this.entities.push(new Entity(this.type, setup));
         }
     }
+
+    addEntity(x, y) {
+        this.entities.push(new Entity(this.type, main.setup, x, y));
+    }
 }

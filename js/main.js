@@ -44,6 +44,8 @@ class Main {
                 )
             );
         }
+
+        this.newGenerations();
     }
 
     newGenerations() {
@@ -53,11 +55,13 @@ class Main {
     }
 
     tick() {
-        main.game.step(main);
+        main.game.step();
         main.map.update(main.populations, main.setup);
 
         main.steps++;
         $("#statsSteps").html(main.steps);
+        $("#statsDays").html(Math.round(main.steps / 24));
+        $("#statsMonths").html(Math.round(main.steps / 720));
         $("#statsNCC").html(main.populations[0].entities.length);
         $("#statsNRC").html(main.populations[1].entities.length);
         $("#statsNMS").html(main.populations[2].entities.length);

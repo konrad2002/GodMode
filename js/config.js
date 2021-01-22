@@ -20,3 +20,12 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function getRandomOffset() {
+    offsets = [
+        getRandomInt(-1, 1),
+        getRandomInt(-1, 1)
+    ];
+
+    return offsets;
+}

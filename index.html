@@ -52,10 +52,10 @@
                 <div class="config-box">
                     <h3>Setup</h3>
                     <label for="width">Width</label>
-                    <input type="number" id="width">
+                    <input type="number" id="width" value="70">
                     <br>
                     <label for="height">Height</label>
-                    <input type="number" id="height">
+                    <input type="number" id="height" value="35">
                     <br>
                     <label for="speed">Speed</label>
                     <input type="number" id="speed" value="100">
@@ -74,20 +74,20 @@
                     <h3>Individuals</h3>
                     <input type="checkbox" id="selectCC">
                     <label for="selectCC">Chlorocea chloronella</label>
-                    <input type="number" id="populationSizeCC">
+                    <input type="number" id="populationSizeCC" value="10">
                     <br>
                     <input type="checkbox" id="selectRC">
                     <label for="selectRC">Ranidae chlorophagi</label>
-                    <input type="number" id="populationSizeRC">
+                    <input type="number" id="populationSizeRC" value="10">
                     <br>
                     <input type="checkbox" id="selectMS">
                     <label for="selectMS">Mustelidae severi</label>
-                    <input type="number" id="populationSizeMS">
+                    <input type="number" id="populationSizeMS" value="10">
                 </div>
 
                 <div class="config-box">
                     <h3>Properties</h3>
-                    <input type="number" id="propertyId">
+                    <input type="number" id="propertyId" value="1000">
                     <textarea id="propertiesText" rows="15" cols="25"></textarea>
                 </div>
 
@@ -100,6 +100,14 @@
                     <div class="stats-child">
                         <span class="stat-description">Steps</span>
                         <span class="stat-value" id="statsSteps">0</span>
+                    </div>
+                    <div class="stats-child">
+                        <span class="stat-description">Days</span>
+                        <span class="stat-value" id="statsDays">0</span>
+                    </div>
+                    <div class="stats-child">
+                        <span class="stat-description">Months</span>
+                        <span class="stat-value" id="statsMonths">0</span>
                     </div>
                     <div class="stats-child">
                         <span class="stat-description">CC</span>
