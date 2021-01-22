@@ -8,6 +8,8 @@ class Main {
 
         this.steps = 0;
 
+        this.history = [];
+
     }
 
     newSetup(propertyId) {
@@ -49,8 +51,12 @@ class Main {
     }
 
     newGenerations() {
+        this.history = [];
+        var i = 0;
         this.populations.forEach(population => {
             population.generateGeneration(this.setup);
+            this.history[i] = [];
+            i++;
         });
     }
 
@@ -65,6 +71,16 @@ class Main {
         $("#statsNCC").html(main.populations[0].entities.length);
         $("#statsNRC").html(main.populations[1].entities.length);
         $("#statsNMS").html(main.populations[2].entities.length);
+
+        var i = 0;
+        main.populations.forEach(population => {
+            main.history[i].push(population.entities.length);
+            i++;
+        });
+
+        if (main.steps % 50 == 0) {
+            drawChart(main);
+        }
     }
 
     toggleLoop() {

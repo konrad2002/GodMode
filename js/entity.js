@@ -19,7 +19,8 @@ class Entity {
         this.newDirection;
         this.dead = false;
 
-        this.food = this.data.properties.neededMass;
+        this.food = this.data.properties.neededMass * 2;
+        this.consumption = ((this.food / 30) / (this.data.properties.speed / 100));
     }
 
     move(main) {
@@ -42,7 +43,7 @@ class Entity {
                 this.pos.x--;
             }
 
-            this.food--;
+            this.food -= this.consumption;
         }
     }
 
@@ -59,6 +60,20 @@ class Entity {
                     offsetX = offsets[0];
                     offsetY = offsets[1];
                 }
+
+                if (this.pos.x >= main.setup.width && offsetX > 0) {
+                    offsetX = -1
+                }
+                if (this.pos.y >= main.setup.height && offsetY > 0) {
+                    offsetY = -1
+                }
+                if (this.pos.x <= 0 && offsetX < 0) {
+                    offsetX = 1
+                }
+                if (this.pos.y <= 0 && offsetY < 0) {
+                    offsetY = 1
+                }
+
             }
             main.populations[this.data.id - 1].addEntity(this.pos.x + offsetX, this.pos.y + offsetY);
         }
@@ -84,5 +99,13 @@ class Entity {
                 });
             }
         });
+    }
+
+    checkHealth() {
+
+        if (this.food <= 0 && this.data.properties.reproduction.type == "animal") {
+            this.dead = true;
+        }
+
     }
 }

@@ -7,6 +7,10 @@
     <title>GodMode</title>
 
     <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+
     <script src="js/config.js"></script>
     <script src="js/setup.js"></script>
     <script src="js/entity.js"></script>
@@ -15,6 +19,7 @@
     <script src="js/map.js"></script>
     <script src="js/main.js"></script>
     <script src="js/listener.js"></script>
+    <script src="js/chart.js"></script>
 
 
     <script src="data/ranks.json"></script>
@@ -29,6 +34,7 @@
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/chart.css">
 
 </head>
 
@@ -65,8 +71,7 @@
                 <div class="config-box">
                     <h3>Controls</h3>
                     <button type="button" id="newPopulationBtn">New Population</button>
-                    <button type="button" id="newGenerationBtn">New Generation</button>
-                    <button type="button" id="doStepBtn">Step</button>
+                    <!-- <button type="button" id="doStepBtn">Step</button> -->
                     <button type="button" id="startLoopBtn">Start Loop</button>
                 </div>
 
@@ -126,6 +131,19 @@
                 <canvas id="canvas_individuals"></canvas>
                 <canvas id="canvas_paths"></canvas>
                 <canvas id="canvas_events"></canvas>
+            </div>
+
+            <hr>
+            <div class="results">
+                <h2>Auswertung</h2>
+
+
+                <figure class="highcharts-figure">
+                    <div id="container"></div>
+                    <p class="highcharts-description">
+                        In diesem Diagramm wird die Zahl der Indiviuen je Art je Zeit betrachtet.
+                    </p>
+                </figure>
             </div>
         </div>
     </div>

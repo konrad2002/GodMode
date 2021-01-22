@@ -10,6 +10,7 @@ class Game {
 
                 entity.move(main);
                 entity.eat();
+                entity.checkHealth();
                 entity.reproduction();
 
                 i++;
