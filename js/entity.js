@@ -19,8 +19,12 @@ class Entity {
         this.newDirection;
         this.dead = false;
 
-        this.food = this.data.properties.neededMass * 2;
-        this.consumption = ((this.food / 30) / (this.data.properties.speed / 100));
+        this.food = this.data.properties.neededMass / 2;
+        // this.consumption = ((this.food / 30) / (this.data.properties.speed / 100));
+
+        this.consumption = ((this.data.properties.neededMass / 2) / 30) / 24;
+
+        this.uuid = uuidv4();
     }
 
     move(main) {
@@ -43,8 +47,8 @@ class Entity {
                 this.pos.x--;
             }
 
-            this.food -= this.consumption;
         }
+        this.food -= this.consumption;
     }
 
     reproduction() {
@@ -76,6 +80,7 @@ class Entity {
 
             }
             main.populations[this.data.id - 1].addEntity(this.pos.x + offsetX, this.pos.y + offsetY);
+            this.food -= this.data.properties.neededMass / 2;
         }
 
     }
@@ -83,21 +88,26 @@ class Entity {
     eat() {
         main.populations.forEach(population => {
 
-            if (population.type != this.data.name) {
-                population.entities.forEach(entity => {
+            population.entities.forEach(entity => {
+
+                if (entity.uuid != this.uuid) {
+
 
                     if (entity.pos.x == this.pos.x && entity.pos.y == this.pos.y) {
-                        console.log("two on same field");
                         if (entity.data.properties.strength < this.data.properties.strength) {
                             entity.dead = true;
                             console.log(this.data.fullName + " killed " + entity.data.fullName);
+                            this.food += entity.data.properties.mass;
                         }
 
-                        if (entity.data.properties.reproduction.type == "plant" == this.data.properties.reproduction.type) entity.dead = true;
+                        if (entity.data.properties.reproduction.type == "plant" && this.data.properties.reproduction.type == "plant" && entity.dead == false && this.dead == false) {
+                            console.log("killed plant");
+                            entity.dead = true;
+                        }
                     }
+                }
 
-                });
-            }
+            });
         });
     }
 
@@ -105,6 +115,7 @@ class Entity {
 
         if (this.food <= 0 && this.data.properties.reproduction.type == "animal") {
             this.dead = true;
+            console.log(this.data.name + " died: too less food");
         }
 
     }

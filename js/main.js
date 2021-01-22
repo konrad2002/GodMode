@@ -85,7 +85,7 @@ class Main {
 
     toggleLoop() {
         if (this.loopRunning) {
-            setTimeout(this.timer, 100);
+            clearInterval(this.timer);
             this.loopRunning = false;
         } else {
             this.timer = setInterval(this.tick, this.setup.speed);
