@@ -79,8 +79,12 @@ class Entity {
                 }
 
             }
-            main.populations[this.data.id - 1].addEntity(this.pos.x + offsetX, this.pos.y + offsetY);
-            this.food -= this.data.properties.neededMass / 2;
+            if (main.populations[this.data.id - 1].entities.length < 2) {
+                console.warn("can't reproduct because of missing partner");
+            } else {
+                main.populations[this.data.id - 1].addEntity(this.pos.x + offsetX, this.pos.y + offsetY);
+                this.food -= this.data.properties.neededMass / 2;
+            }
         }
 
     }
