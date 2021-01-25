@@ -99,9 +99,12 @@ class Entity {
 
                     if (entity.pos.x == this.pos.x && entity.pos.y == this.pos.y) {
                         if (entity.data.properties.strength < this.data.properties.strength) {
-                            entity.dead = true;
-                            console.log(this.data.fullName + " killed " + entity.data.fullName);
-                            this.food += entity.data.properties.mass;
+                            console.log(entity.data.properties.strength + " meets " + this.data.properties.consumes);
+                            if (this.data.properties.consumes[0] <= entity.data.properties.strength && this.data.properties.consumes[1] >= entity.data.properties.strength) {
+                                entity.dead = true;
+                                console.log(this.data.fullName + " killed " + entity.data.fullName);
+                                this.food += entity.data.properties.mass;
+                            }
                         }
 
                         if (entity.data.properties.reproduction.type == "plant" && this.data.properties.reproduction.type == "plant" && entity.dead == false && this.dead == false) {
