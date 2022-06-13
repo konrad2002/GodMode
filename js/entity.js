@@ -83,7 +83,7 @@ class Entity {
                 console.warn("can't reproduct because of missing partner");
             } else {
                 main.populations[this.data.id - 1].addEntity(this.pos.x + offsetX, this.pos.y + offsetY);
-                this.food -= this.data.properties.neededMass / 2;
+                this.food -= this.data.properties.neededMass / 4;
             }
         }
 
