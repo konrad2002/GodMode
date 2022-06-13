@@ -55,7 +55,7 @@
                 <select name="propertyId">
                     <?php
                         $content = scandir($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/");
-
+                        $pid = 0;
                         foreach ($content as $folder) {
                             if (strpos($folder, ".") === FALSE) {
                                 echo("<option value='$folder'");
