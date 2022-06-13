@@ -1,4 +1,4 @@
-class Entity {
+class Entity { //JONAS STINKT
     constructor(eType, setup, x = null, y = null) {
         this.type = eType;
 
