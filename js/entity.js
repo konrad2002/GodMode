@@ -48,7 +48,7 @@ class Entity {
             main.coords[this.pos.x][this.pos.y].push(this);
 
         }
-        if (this.data.name == "ms") {
+        if (this.data.rank == "secondary consumer") {
             this.food -= this.consumption/2;
         } else {
             this.food -= this.consumption;

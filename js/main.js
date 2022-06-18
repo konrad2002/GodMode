@@ -71,7 +71,11 @@ class Main {
 
     tick() {
         main.game.step();
-        main.map.update(main.populations, main.setup);
+        
+        if (main.steps % 10 == 0) {
+            main.map.update(main.populations, main.setup);
+        }
+        
 
         main.steps++;
         $("#statsSteps").html(main.steps);

@@ -104,7 +104,8 @@ function drawChart(main) {
             chart: {
                 marginLeft: 40, // Keep all charts left aligned
                 spacingTop: 20,
-                spacingBottom: 20
+                spacingBottom: 20,
+                animation: false
             },
             title: {
                 text: main.populations[i].type,
@@ -151,10 +152,12 @@ function drawChart(main) {
                 valueDecimals: dataset
             },
             series: [{
+                animation: false,
                 data: dataset,
                 name: main.populations[i].type,
                 type: 'line',
-                color: Highcharts.getOptions().colors[i],
+                lineWidth: 4,
+                color: Highcharts.getOptions().colors[i+2],
                 fillOpacity: 0.3,
                 tooltip: {
                     valueSuffix: ' Entities'
