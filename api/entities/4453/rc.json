@@ -6,17 +6,17 @@
     "symbol": "🐸",
     "rank": "primary consumer",
     "properties": {
-        "mass": 5,
+        "mass": 10,
         "neededMass": 10,
         "dryMass": 10,
         "neededSpace": 1,
         "visits": 1,
-        "speed": 5,
+        "speed": 25,
         "strength": 10,
         "consumes": [0, 9],
         "reproduction": {
             "type": "animal",
-            "childs": 5
+            "childs": 4
         }
     }
 }

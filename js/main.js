@@ -10,6 +10,7 @@ class Main {
 
         this.history = [];
 
+        this.coords = [];
     }
 
     newSetup(propertyId) {
@@ -19,6 +20,14 @@ class Main {
 
     newPopulation() {
         this.populations = [];
+        this.coords = [];
+
+        for (let i = 0; i < this.setup.width; i++) {
+            this.coords[i] = [];
+            for (let j = 0; j < this.setup.height; j++) {
+                this.coords[i][j] = [];
+            }
+        }
 
         if ($("#selectCC").is(":checked")) {
             this.populations.push(
@@ -78,7 +87,7 @@ class Main {
             i++;
         });
 
-        if (main.steps % 50 == 0) {
+        if (main.steps % 250 == 0) {
             drawChart(main);
         }
     }

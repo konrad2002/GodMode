@@ -6,7 +6,7 @@
     "symbol": "🌿",
     "rank": "primary producer",
     "properties": {
-        "mass": 1,
+        "mass": 0.1,
         "neededMass": 0,
         "dryMass": 10,
         "neededSpace": 0.1,
@@ -16,7 +16,7 @@
         "consumes": [0, 4],
         "reproduction": {
             "type": "plant",
-            "childs": 0.15
+            "childs": 2
         }
     }
 }

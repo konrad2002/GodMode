@@ -48,14 +48,19 @@ class Entity {
             main.coords[this.pos.x][this.pos.y].push(this);
 
         }
-        this.food -= this.consumption;
+        if (this.data.name == "ms") {
+            this.food -= this.consumption/2;
+        } else {
+            this.food -= this.consumption;
+        }
     }
 
     reproduction() {
 
         var r2 = getRandomInt(0, 10000);
 
-        if ((r2 > 0 && r2 <= this.data.properties.reproduction.childs * 100) &&
+        if ((r2 > 0 && r2 <= this.data.properties.reproduction.childs * 100) 
+        &&
             (
                 (this.food > this.data.properties.neededMass / 2) ||
                 (this.data.properties.reproduction.type == "plant")
@@ -65,7 +70,7 @@ class Entity {
                 console.warn("can't reproduct because of missing partner");
             } else {
                 main.populations[this.data.id - 1].addEntity();
-                this.food -= this.data.properties.neededMass / 3;
+                this.food -= this.data.properties.neededMass / 2
             }
         }
 
@@ -83,7 +88,7 @@ class Entity {
                     if (entity.pos.x == this.pos.x && entity.pos.y == this.pos.y) {
 
                         if (entity.uuid != this.uuid) {
-                            if (entity.data.properties.strength < this.data.properties.strength) {
+                            if (entity.data.properties.strength < this.data.properties.strength && entity.dead == false && this.dead == false) {
                                 console.log(entity.data.properties.strength + " meets " + this.data.properties.consumes);
                                 if (
                                     this.data.properties.consumes[0] <= entity.data.properties.strength &&
