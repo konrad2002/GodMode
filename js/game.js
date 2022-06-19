@@ -11,7 +11,7 @@ class Game {
                     if (index !== -1) {
                         main.coords[entity.pos.x][entity.pos.y].splice(index, 1);
                     }
-                    console.log("you're dead bro: " + entity.uuid);
+                    //console.log("Entity died: " + entity.uuid);
                     population.entities.splice(i, 1);
                 }
 

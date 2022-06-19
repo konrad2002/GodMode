@@ -72,7 +72,7 @@ class Main {
     tick() {
         main.game.step();
         
-        if (main.steps % 10 == 0) {
+        if (main.steps % this.main.setup.maprate == 0) {
             main.map.update(main.populations, main.setup);
         }
         
@@ -91,7 +91,7 @@ class Main {
             i++;
         });
 
-        if (main.steps % 250 == 0) {
+        if (main.steps % this.main.setup.graphrate == 0) {
             drawChart(main);
         }
     }

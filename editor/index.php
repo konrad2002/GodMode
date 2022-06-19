@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GodMode EDITOR</title>
+    <title>GodMode Editor</title>
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/nav.css">
@@ -26,14 +26,14 @@
                 <ul>
                     <li><span class="nav-title">GodMode</span></li>
                     <li><a href="">Reload</a></li>
-                    <li><a href="#credits">Credits</a></li>
+                    <li><a href="/godmode/credits">Credits</a></li>
                     <li><a href="/godmode">Simulator</a></li>
                     <li><a href="/godmode/editor">Editor</a></li>
                 </ul>
             </nav>
         </header>
         <div class="content">
-            <h1>GodMode EDITOR</h1>
+            <h1>GodMode Editor</h1>
             <?php
 
                 if (isset($_REQUEST["save"])) {

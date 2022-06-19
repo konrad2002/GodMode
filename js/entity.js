@@ -67,7 +67,7 @@ class Entity {
             )
         ) {
             if (main.populations[this.data.id - 1].entities.length < 2) {
-                console.warn("can't reproduct because of missing partner");
+                console.warn(this.data.name + " can't reproduct because a lack of partners");
             } else {
                 main.populations[this.data.id - 1].addEntity();
                 this.food -= this.data.properties.neededMass / 2
@@ -118,7 +118,7 @@ class Entity {
 
         if (this.food <= 0 && this.data.properties.reproduction.type == "animal") {
             this.dead = true;
-            console.log(this.data.name + " died: too less food");
+            console.log(this.data.name + " died: too little food");
         }
 
     }
