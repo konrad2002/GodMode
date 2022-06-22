@@ -40,10 +40,10 @@
                     
                     $newPId = $_REQUEST["newPropertyId"];
 
-                    mkdir($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/".$newPId);
+                    mkdir($_SERVER['DOCUMENT_ROOT']."/godmode/data/entities/".$newPId);
 
                     foreach ($types as $type) {
-                        file_put_contents($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/".$newPId."/".$type.".json", $_REQUEST["new".$type]);
+                        file_put_contents($_SERVER['DOCUMENT_ROOT']."/godmode/data/entities/".$newPId."/".$type.".json", $_REQUEST["new".$type]);
                     }
                     echo("saved! ID is: <b>".$newPId."</b>");
 
@@ -54,7 +54,7 @@
             <form action="" method="get">
                 <select name="propertyId">
                     <?php
-                        $content = scandir($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/");
+                        $content = scandir($_SERVER['DOCUMENT_ROOT']."/godmode/data/entities/");
                         $pid = 0;
                         foreach ($content as $folder) {
                             if (strpos($folder, ".") === FALSE) {
@@ -77,7 +77,7 @@
 
                     $newId = 1000;
 
-                    while (file_exists($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/".$newId."/cc.json")) {
+                    while (file_exists($_SERVER['DOCUMENT_ROOT']."/godmode/data/entities/".$newId."/cc.json")) {
                         $newId = random_int(1001, 9999);
                     }
 
@@ -87,7 +87,7 @@
 
                     foreach ($types as $type) {
                         echo("<textarea name='new".$type."' cols='50' rows='21'>");
-                        echo(file_get_contents($_SERVER['DOCUMENT_ROOT']."/godmode/api/entities/".$pid."/".$type.".json"));
+                        echo(file_get_contents($_SERVER['DOCUMENT_ROOT']."/godmode/data/entities/".$pid."/".$type.".json"));
                         echo("</textarea>");
                     }
 

@@ -8,9 +8,6 @@
     "properties": {
         "mass": 5,
         "neededMass": 10,
-        "dryMass": 10,
-        "neededSpace": 1,
-        "visits": 1,
         "speed": 5,
         "strength": 10,
         "consumes": [0, 9],
