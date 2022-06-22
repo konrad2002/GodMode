@@ -4,14 +4,22 @@ class Population {
         this.size = size;
     }
 
-    generateGeneration(setup) {
+    generateGeneration() {
         this.entities = [];
         for (let i = 0; i < this.size; i++) {
-            this.entities.push(new Entity(this.type, setup));
+            this.addEntity();
         }
     }
 
-    addEntity(x, y) {
-        this.entities.push(new Entity(this.type, main.setup, x, y));
+    addEntity(x = null, y = null) {
+
+        if (x === null || y === null) {
+            x = getRandomInt(0, main.setup.width - 1);
+            y = getRandomInt(0, main.setup.height - 1);
+        }
+
+        var entity = new Entity(this.type, main.setup, x, y);
+        this.entities.push(entity);
+        main.coords[x][y].push(entity);
     }
 }

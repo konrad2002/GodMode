@@ -10,6 +10,7 @@ class Main {
 
         this.history = [];
 
+        this.coords = [];
     }
 
     newSetup(propertyId) {
@@ -19,6 +20,14 @@ class Main {
 
     newPopulation() {
         this.populations = [];
+        this.coords = [];
+
+        for (let i = 0; i < this.setup.width; i++) {
+            this.coords[i] = [];
+            for (let j = 0; j < this.setup.height; j++) {
+                this.coords[i][j] = [];
+            }
+        }
 
         if ($("#selectCC").is(":checked")) {
             this.populations.push(
@@ -62,7 +71,11 @@ class Main {
 
     tick() {
         main.game.step();
-        main.map.update(main.populations, main.setup);
+        
+        if (main.steps % this.main.setup.maprate == 0) {
+            main.map.update(main.populations, main.setup);
+        }
+        
 
         main.steps++;
         $("#statsSteps").html(main.steps);
@@ -78,7 +91,7 @@ class Main {
             i++;
         });
 
-        if (main.steps % 50 == 0) {
+        if (main.steps % this.main.setup.graphrate == 0) {
             drawChart(main);
         }
     }

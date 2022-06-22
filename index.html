@@ -10,6 +10,7 @@
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/boost.js"></script>
 
     <script src="js/config.js"></script>
     <script src="js/setup.js"></script>
@@ -45,9 +46,9 @@
                 <ul>
                     <li><span class="nav-title">GodMode</span></li>
                     <li><a href="">Reload</a></li>
-                    <li><a href="#credits">Credits</a></li>
-                    <li><a href="/tools/godmode">Simulator</a></li>
-                    <li><a href="/tools/godmode/editor">Editor</a></li>
+                    <li><a href="/godmode/credits">Credits</a></li>
+                    <li><a href="/godmode">Simulator</a></li>
+                    <li><a href="/godmode/editor">Editor</a></li>
                 </ul>
             </nav>
         </header>
@@ -60,42 +61,44 @@
                 <div class="config-box">
                     <h3>Setup</h3>
                     <label for="width">Width</label>
-                    <input type="number" id="width" value="60">
-                    <br>
+                    <input type="number" id="width" value="60"><br>
                     <label for="height">Height</label>
-                    <input type="number" id="height" value="35">
-                    <br>
+                    <input type="number" id="height" value="60"><br>
                     <label for="speed">Speed</label>
-                    <input type="number" id="speed" value="100">
+                    <input type="number" id="speed" value="1">
+                    <label for="maprate">Maprate</label>
+                    <input type="number" id="maprate" value="10"><br>
+                    <label for="graphrate">Graphrate</label>
+                    <input type="number" id="graphrate" value="250"><br>
                     <button type="button" id="setupBtn">Setup</button>
                 </div>
 
                 <div class="config-box">
-                    <h3>Controls</h3>
-                    <button type="button" id="newPopulationBtn">New Population</button>
-                    <!-- <button type="button" id="doStepBtn">Step</button> -->
-                    <button type="button" id="startLoopBtn">Toggle Loop</button>
+                    <h3>Properties</h3>
+                    <label for="propertyId">PropertyID</label>
+                    <input type="number" id="propertyId" value="1000"><br>
+                    <label for="PropertiesText">Properties Text</label>
+                    <textarea id="propertiesText" rows="23" cols="25"></textarea>
                 </div>
 
                 <div class="config-box">
                     <h3>Individuals</h3>
                     <input type="checkbox" id="selectCC">
-                    <label for="selectCC">Chlorocea chloronella</label>
-                    <input type="number" id="populationSizeCC" value="10">
-                    <br>
+                    <label for="selectCC">🌿Chlorocea chloronella</label>
+                    <input type="number" id="populationSizeCC" value="1600"><br>
                     <input type="checkbox" id="selectRC">
-                    <label for="selectRC">Ranidae chlorophagi</label>
-                    <input type="number" id="populationSizeRC" value="10">
-                    <br>
+                    <label for="selectRC">🐸Ranidae chlorophagi</label>
+                    <input type="number" id="populationSizeRC" value="80"><br>
                     <input type="checkbox" id="selectMS">
-                    <label for="selectMS">Mustelidae severi</label>
-                    <input type="number" id="populationSizeMS" value="10">
+                    <label for="selectMS">🦨Mustelidae severi</label>
+                    <input type="number" id="populationSizeMS" value="20">
                 </div>
 
                 <div class="config-box">
-                    <h3>Properties</h3>
-                    <input type="number" id="propertyId" value="1000">
-                    <textarea id="propertiesText" rows="15" cols="25"></textarea>
+                    <h3>Controls</h3><br>
+                    <button type="button" id="newPopulationBtn">New Population</button><br><br>
+                    <!-- <button type="button" id="doStepBtn">Step</button> -->
+                    <button type="button" id="startLoopBtn">Toggle Loop</button>
                 </div>
 
             </div>
@@ -117,15 +120,15 @@
                         <span class="stat-value" id="statsMonths">0</span>
                     </div>
                     <div class="stats-child">
-                        <span class="stat-description">CC</span>
+                        <span class="stat-description">CC🌿</span>
                         <span class="stat-value" id="statsNCC">0</span>
                     </div>
                     <div class="stats-child">
-                        <span class="stat-description">RC</span>
+                        <span class="stat-description">RC🐸</span>
                         <span class="stat-value" id="statsNRC">0</span>
                     </div>
                     <div class="stats-child">
-                        <span class="stat-description">MS</span>
+                        <span class="stat-description">MS🦨</span>
                         <span class="stat-value" id="statsNMS">0</span>
                     </div>
                 </div>

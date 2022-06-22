@@ -1,5 +1,5 @@
 function getJson(entity, propertyId, toTextArea = false, storeResult = false) {
-    var url = 'https://logilutions.de/api/godmode/data/entities/' + propertyId + '/' + entity + '.json';
+    var url = '/godmode/data/entities/' + propertyId + '/' + entity + '.json';
     console.log("called API-Request: '" + url + "'");
 
     $.getJSON(url).done(function(data) {
